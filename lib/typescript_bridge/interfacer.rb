@@ -26,12 +26,46 @@ class Interfacer
   def to_struct
     attribute_names = attributes.map(&:sym_name)
     Struct.new(attribute_names) do
+      attr_accessor :attributes, :name
+
       def initialize(options = {})
         required_attr = attributes.reject(&:optional).map(&:sym_name)
         validity_array = options.keys - required_attr
         raise "Missing attribute #{validity_array[0]}" if validity_array.length == 1
         raise "Missing attributes #{validity_array.map(&:to_s).join(', ')}" if validity_array.length > 1
       end
+
+      alias_method :to_s, :name
+
+      private_class_method :check_attribute_validity
+
+      class << self
+        def check_attribute_validity(required, provided)
+          true
+        end
+      end
+    end
+  end
+
+  private
+
+  def convert_class(class_string, structs)
+    class_string.capitalize!
+    if structs.map(&:to_s).include? class_string
+      index = structs.map(&:to_s).find_index(class_string)
+      return structs[index]
+    end
+    case class_string
+    when 'string'
+      String
+    when 'number'
+      Numeric
+    when 'boolean'
+      Boolean
+    when 'undefined'
+      Undefined
+    when 'null'
+      NilClass
     end
   end
 end

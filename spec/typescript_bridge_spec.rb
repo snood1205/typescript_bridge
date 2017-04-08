@@ -8,5 +8,4 @@ RSpec.describe TypescriptBridge do
   it 'can pass a basic test' do
     expect(true).to be_truthy
   end
-
 end
