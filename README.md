@@ -1,3 +1,4 @@
+[![Gem Version](https://badge.fury.io/rb/typescript_bridge.svg)](https://badge.fury.io/rb/typescript_bridge)
 [![Build Status](https://travis-ci.org/snood1205/typescript_bridge.svg?branch=master)](https://travis-ci.org/snood1205/typescript_bridge)
 # TypescriptBridge
 
