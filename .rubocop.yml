@@ -1,0 +1,21 @@
+AllCops:
+  TargetRubyVersion: 2.4.0
+
+Style/CollectionMethods:
+  Enabled: true
+
+Style/DocumentationMethods:
+  Enabled: true
+
+Style/StringMethods:
+  Enabled: true
+
+Style/SingleLineBlockParams:
+  Enabled: true
+
+Style/CommandLiteral:
+  StyleGuide: '#backticks'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+  

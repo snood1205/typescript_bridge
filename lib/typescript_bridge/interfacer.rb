@@ -35,7 +35,6 @@ class Interfacer
     end
   end
 end
-end
 
 class InterfaceAttribute
   attr_accessor :name, :datatype, :optional

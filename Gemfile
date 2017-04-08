@@ -1,4 +1,8 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in typescript_bridge.gemspec
-gemspec
+group :development do
+  gem 'bundler', '~> 1.14'
+  gem 'rake', '~> 10.5'
+  gem 'rspec', '~> 3.5'
+end
+
