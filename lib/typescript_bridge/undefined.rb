@@ -1,14 +1,6 @@
 class Undefined < NilClass
+end
 
-  def method_missing(*args)
-    super if respond_to_missing?(args)
-  end
+class Kernel
 
-  def respond_to_missing?(*args)
-    super(args)
-  end
-
-  def to_s
-    'undefined'
-  end
 end
